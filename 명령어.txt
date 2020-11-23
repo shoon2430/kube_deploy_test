@@ -1,1 +1,24 @@
+//EKS 클러스터 생성 명령
+eksctl create cluster --name plan-it --version 1.18 --region us-east-2 --nodegroup-name standard-workers --node-type t3.micro --nodes 2
+
+eksctl get cluster
+eksctl get nodegroup --cluster CLUSTERNAME
+eksctl scale nodegroup --cluster plan-it --name standard-workers --nodes 0
+
+eksctl delete cluster plan-it
+
+# 파드 정보
 kubectl describe pod
+
+#실행 명령어
+kubectl apply -f app-conf.yaml
+kubectl apply -f app-db-cri.yaml
+kubectl apply -f app-db-root.yaml
+kubectl apply -f app-db.yaml
+kubectl apply -f app.yaml
+
+kubectl delete -f app.yaml
+kubectl delete -f app-db.yaml
+kubectl delete -f app-db-root.yaml
+kubectl delete -f app-db-cri.yaml
+kubectl delete -f app-conf.yaml
