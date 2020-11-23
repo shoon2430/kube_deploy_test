@@ -5,3 +5,5 @@ metadata:
 data:
   host: mysql
   name: test
+  username: planit
+  password: mysql
