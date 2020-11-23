@@ -47,11 +47,11 @@ spec:
                   key: name
             - name: DB_USERNAME # Setting Database username from Secret
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: db-conf # Secret Name
                   key: username
             - name: DB_PASSWORD # Setting Database password from Secret
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: db-conf
                   key: password
